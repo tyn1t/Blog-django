@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog my</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <li>home</li>
+                <li>sabar mais +</li>
+                <li>Aprenda mais +</li>
+                <li>teste django +</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="blog_list">
+            {% for blog in blog_list %}
+            <div class="blog_item">
+                <h2 class="title">{{ blog.title }}</h2>
+                <p>{{ blog.content }}</p>
+                <p>{{ blog.auto }}</p>
+                <p><time>{{ blog.create_at }}</time></p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+<body>
+    <h1>teste</h1>
+    
+    <form  action="" method="post" class="blog-form">{% csrf_token %}
+       <label for="{{ form.title.id_for_label }}">Titulo</label>
+       {{ form.title }}
+       <label for="{{ form.content.id_for_label }}">Content</label>
+       {{ form.content }}
+       <label for="{{ form.title.id_for_label }}">Publicar</label>
+       {{ form.public }}
+       <label for="{{ form.title.id_for_label }}">slug</label>
+       {{ form.slug }}
+      <button type="submit">post</button>
+    </form>
+</body>
+</html>
